@@ -14,7 +14,17 @@ namespace Poker.Core
 
         void ObserveGameState(); 
 
+        /// <summary>
+        /// Shows the two starting cards
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<Card> RevealHand();
+
+        /// <summary>
+        /// Shows the best five card hand this player has
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<Card> RevealPlayingHand();
 
         void AcceptCard(Card card);
     }

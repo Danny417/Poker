@@ -16,7 +16,7 @@ namespace Poker.Core
 
         IEnumerable<IPlayer> GetPlayers();
 
-        IEnumerable<Card> GetVisibleCards();
+        IEnumerable<Card> GetCommunityCards();
 
         object GetGameLog();
     }

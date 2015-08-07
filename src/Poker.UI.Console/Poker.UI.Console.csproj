@@ -48,6 +48,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Poker.GameImplementation1\Poker.GameImplementation1.csproj">
+      <Project>{ceed9b7d-0ff7-4a71-874b-4e952ca538e7}</Project>
+      <Name>Poker.GameImplementation1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Poker.Core\Poker.Core.csproj">
+      <Project>{5987bfbe-e933-44ec-aa85-0f345478da93}</Project>
+      <Name>Poker.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

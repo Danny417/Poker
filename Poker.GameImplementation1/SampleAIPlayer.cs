@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Poker.GameImplementation1
 {
-    class SampleAIPlayer : IPlayer
+    public class SampleAiPlayer : IPlayer
     {
         List<Card> _startingHand;
         ITable _gameTable;
@@ -21,7 +21,7 @@ namespace Poker.GameImplementation1
             }
         }
 
-        public SampleAIPlayer(ITable gameTable)
+        public SampleAiPlayer(ITable gameTable)
         {
             _startingHand = new List<Card>();
             _gameTable = gameTable;

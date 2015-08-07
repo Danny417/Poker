@@ -34,7 +34,7 @@ namespace Poker.GameImplementation1
         public void StartNewGame(IEnumerable<IPlayer> players)
         {
             _players.AddRange(players);
-            _deck = GetShuffledDeck();
+            _deck = getShuffledDeck();
 
             dealCards();
         }
@@ -69,9 +69,35 @@ namespace Poker.GameImplementation1
             _communityCards.Add(_upsideDownCommunityCards.Pop());
         }
 
-        private Stack<Card> GetShuffledDeck()
+        private Stack<Card> getShuffledDeck()
         {
-            throw new NotImplementedException();
+            // Create all 52 cards
+            IEnumerable<CardSuit> suits = Enum.GetValues(typeof(CardSuit)).Cast<CardSuit>();
+            IEnumerable<CardRank> ranks = Enum.GetValues(typeof(CardRank)).Cast<CardRank>();
+            var deck = from r in ranks from s in suits select new Card(r, s);
+
+            // Shuffle it
+            return shuffleAndStack(deck.ToList());
+        }
+
+        /// <summary>
+        /// Based on https://stackoverflow.com/questions/6165379/quickest-way-to-randomly-re-order-a-linq-collection
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        private static Stack<T> shuffleAndStack<T>(IList<T> list)
+        {
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+            return new Stack<T>(list);
         }
     }
 }

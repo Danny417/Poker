@@ -9,16 +9,34 @@ namespace Poker.Core
     public class Card
     {
         public CardRank Rank { get; private set; }
-        public CardRank Suit { get; private set; }
+        public CardSuit Suit { get; private set; }
 
-        // TODO: We might not use this at all
-        int Score
+        public Card(CardRank rank, CardSuit suit)
         {
-            get
+            Rank = rank;
+            Suit = suit;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Card)
             {
-                return 0;
-                //return Rank * 4 + Suit;
+                return Rank == ((Card)obj).Rank && Suit == ((Card)obj).Suit;
             }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)Rank + (int)Suit * 14;
+        }
+
+        public override string ToString()
+        {
+            return $"{Rank} of {Suit}s";
         }
     }
 
@@ -28,22 +46,22 @@ namespace Poker.Core
         King = 13,
         Queen = 12,
         Jack = 11,
-        r10 = 10,
-        r9 = 9,
-        r8 = 8,
-        r7 = 7,
-        r6 = 6,
-        r5 = 5,
-        r4 = 4,
-        r3 = 3,
-        r2 = 2,
+        Ten = 10,
+        Nine = 9,
+        Eight = 8,
+        Seven = 7,
+        Six = 6,
+        Five = 5,
+        Four = 4,
+        Three = 3,
+        Two = 2,
     }
 
     public enum CardSuit
     {
-        Spade = 4,
-        Heart = 3,
-        Diamond = 2,
-        Club = 1,
+        Spade = 3,
+        Heart = 2,
+        Diamond = 1,
+        Club = 0,
     }
 }

@@ -50,8 +50,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TableTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Poker.GameImplementation1\Poker.GameImplementation1.csproj">
+      <Project>{ceed9b7d-0ff7-4a71-874b-4e952ca538e7}</Project>
+      <Name>Poker.GameImplementation1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Poker.Core\Poker.Core.csproj">
+      <Project>{5987bfbe-e933-44ec-aa85-0f345478da93}</Project>
+      <Name>Poker.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

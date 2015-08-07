@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poker.Game
+namespace Poker.Core
 {
     public class Card
     {
         public CardRank Rank { get; private set; }
         public CardRank Suit { get; private set; }
 
+        // TODO: We might not use this at all
         int Score
         {
             get

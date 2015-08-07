@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Poker.Game
+namespace Poker.Core
 {
     public interface IPlayer
     {
-        void MakeMove();
+        Move MakeMove();
 
         void ObserveMove();
 
-        void ObserveGameState(ITable table);
+        void ObserveGameState(); 
 
-        void RevealHand();
+        IEnumerable<Card> RevealHand();
 
         void AcceptCard(Card card);
     }

@@ -36,7 +36,7 @@ namespace Poker.Core
 
         public override string ToString()
         {
-            return $"{Rank} of {Suit}s";
+            return "{Rank} of {Suit}s";
         }
     }
 

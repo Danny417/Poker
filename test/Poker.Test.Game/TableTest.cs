@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Poker.GameImplementation1;
+using Poker.Main;
 using System.Collections.Generic;
 using Poker.Core;
 using System.Linq;

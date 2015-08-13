@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poker.GameImplementation1
+namespace Poker.Main
 {
     public class Table : ITable
     {

@@ -1,12 +1,12 @@
 ﻿using Poker.Core;
-using Poker.GameImplementation1;
 using System;
 using System.Collections.Generic;
+using Poker.Main;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poker.UI.Console
+namespace Poker.Client.Console
 {
     class Program
     {

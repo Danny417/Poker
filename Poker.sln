@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.UI.Console", "src\Poker.UI.Console\Poker.UI.Console.csproj", "{38DE7C3F-1F6B-4978-9444-B7720A72CB29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.Client.Console", "src\Poker.UI.Console\Poker.Client.Console.csproj", "{38DE7C3F-1F6B-4978-9444-B7720A72CB29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.Test.Implementation1", "test\Poker.Test.Game\Poker.Test.Implementation1.csproj", "{DCF5E0A4-19CB-4332-9AA2-A87AAC149566}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.Test.Main", "test\Poker.Test.Game\Poker.Test.Main.csproj", "{DCF5E0A4-19CB-4332-9AA2-A87AAC149566}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3DB873BA-E631-4BFF-9EBC-A55DD05CAE49}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.Core", "src\Poker.Core\Poker.Core.csproj", "{5987BFBE-E933-44EC-AA85-0F345478DA93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.GameImplementation1", "Poker.GameImplementation1\Poker.GameImplementation1.csproj", "{CEED9B7D-0FF7-4A71-874B-4E952CA538E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.Main", "src\Poker.Main\Poker.Main.csproj", "{CEED9B7D-0FF7-4A71-874B-4E952CA538E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.ServiceHost", "src\Poker.ServiceHost\Poker.ServiceHost.csproj", "{3DF54995-BA7E-4E41-88C6-BF24E6CE629A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{CEED9B7D-0FF7-4A71-874B-4E952CA538E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEED9B7D-0FF7-4A71-874B-4E952CA538E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEED9B7D-0FF7-4A71-874B-4E952CA538E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DF54995-BA7E-4E41-88C6-BF24E6CE629A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF54995-BA7E-4E41-88C6-BF24E6CE629A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF54995-BA7E-4E41-88C6-BF24E6CE629A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF54995-BA7E-4E41-88C6-BF24E6CE629A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Poker.Core;
 using System.Linq;
 
-namespace Poker.Test.Game
+namespace Poker.Test.UnitTests
 {
     [TestClass]
     public class TableTest

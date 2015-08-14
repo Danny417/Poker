@@ -6,8 +6,8 @@
     <ProjectGuid>{DCF5E0A4-19CB-4332-9AA2-A87AAC149566}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Poker.Test.Game</RootNamespace>
-    <AssemblyName>Poker.Test.Game</AssemblyName>
+    <RootNamespace>Poker.Test.UnitTests</RootNamespace>
+    <AssemblyName>Poker.Test.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,11 +54,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Poker.Core\Poker.Core.csproj">
+    <ProjectReference Include="..\..\Core\Poker.Core.csproj">
       <Project>{5987bfbe-e933-44ec-aa85-0f345478da93}</Project>
       <Name>Poker.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Poker.Main\Poker.Main.csproj">
+    <ProjectReference Include="..\..\Main\Poker.Main.csproj">
       <Project>{ceed9b7d-0ff7-4a71-874b-4e952ca538e7}</Project>
       <Name>Poker.Main</Name>
     </ProjectReference>

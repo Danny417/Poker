@@ -5,7 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poker.ServiceHost
+namespace Poker.Service.Host
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Poker.ServiceHost
         {
             ServiceBase[] servicesToRun = new ServiceBase[] 
             { 
-                new PokerServiceHost() 
+                new Host() 
             };
 
             ServiceBase.Run(servicesToRun);

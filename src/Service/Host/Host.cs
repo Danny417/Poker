@@ -7,34 +7,38 @@ using System.ServiceProcess;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Threading;
-using Poker.Main.Service;
+using Poker.Service.Contracts;
 using System.Threading.Tasks;
 
-namespace Poker.ServiceHost
+namespace Poker.Service.Host
 {
     /// <summary>
     /// Poker Game service that running in the background
     /// </summary>
-    public partial class PokerServiceHost : ServiceBase
+    public partial class Host : ServiceBase
     {
         private System.ServiceModel.ServiceHost _gameHost;
 
         /// <summary>
         /// Constructor of Game Service
         /// </summary>
-        public PokerServiceHost()
+        public Host()
         {
             InitializeComponent();
 
-            //Custom event log
-            eventLog1 = new System.Diagnostics.EventLog();
+            //Custom event log and source
+            eventLog1 = new System.Diagnostics.EventLog
+            {
+                Source = "PokerSource",
+                Log = "PokerServiceLog"
+            };
+
             if (!System.Diagnostics.EventLog.SourceExists("PokerSource"))
             {
                 System.Diagnostics.EventLog.CreateEventSource(
                     "PokerSource", "PokerServiceLog");
             }
-            eventLog1.Source = "PokerSource";
-            eventLog1.Log = "PokerServiceLog";
+            this.AutoLog = false;
 
             _gameHost = new System.ServiceModel.ServiceHost(typeof(GameService));
         }
@@ -46,7 +50,6 @@ namespace Poker.ServiceHost
         /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
-            Thread.Sleep(30000);
             try
             {
                 base.OnStart(args);

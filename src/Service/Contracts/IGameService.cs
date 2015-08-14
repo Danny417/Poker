@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poker.Main.Service
+namespace Poker.Service.Contracts
 {
     [ServiceContract]
     public interface IGameService
@@ -15,7 +15,7 @@ namespace Poker.Main.Service
         /// User join the game (or table)
         /// </summary>
         [OperationContract]
-        void JoinGame();
+        List<string> JoinGame(string userName);
 
         /// <summary>
         /// User leave the game
@@ -28,5 +28,6 @@ namespace Poker.Main.Service
         /// </summary>
         [OperationContract]
         void WatchGame();
+
     }
 }

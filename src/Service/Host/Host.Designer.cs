@@ -1,6 +1,6 @@
-﻿namespace Poker.ServiceHost
+﻿namespace Poker.Service.Host
 {
-    partial class PokerServiceHost
+    partial class Host
     {
         /// <summary> 
         /// Required designer variable.

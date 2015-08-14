@@ -16,10 +16,10 @@ namespace Poker.Clients.UI.Console.GameServiceReference {
     public interface IGameService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/JoinGame", ReplyAction="http://tempuri.org/IGameService/JoinGameResponse")]
-        string[] JoinGame(string userName);
+        System.Guid JoinGame(string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/JoinGame", ReplyAction="http://tempuri.org/IGameService/JoinGameResponse")]
-        System.Threading.Tasks.Task<string[]> JoinGameAsync(string userName);
+        System.Threading.Tasks.Task<System.Guid> JoinGameAsync(string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/QuitGame", ReplyAction="http://tempuri.org/IGameService/QuitGameResponse")]
         void QuitGame();
@@ -32,6 +32,12 @@ namespace Poker.Clients.UI.Console.GameServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/WatchGame", ReplyAction="http://tempuri.org/IGameService/WatchGameResponse")]
         System.Threading.Tasks.Task WatchGameAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/update", ReplyAction="http://tempuri.org/IGameService/updateResponse")]
+        string[] update(System.Guid uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/update", ReplyAction="http://tempuri.org/IGameService/updateResponse")]
+        System.Threading.Tasks.Task<string[]> updateAsync(System.Guid uid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,11 +67,11 @@ namespace Poker.Clients.UI.Console.GameServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public string[] JoinGame(string userName) {
+        public System.Guid JoinGame(string userName) {
             return base.Channel.JoinGame(userName);
         }
         
-        public System.Threading.Tasks.Task<string[]> JoinGameAsync(string userName) {
+        public System.Threading.Tasks.Task<System.Guid> JoinGameAsync(string userName) {
             return base.Channel.JoinGameAsync(userName);
         }
         
@@ -83,6 +89,14 @@ namespace Poker.Clients.UI.Console.GameServiceReference {
         
         public System.Threading.Tasks.Task WatchGameAsync() {
             return base.Channel.WatchGameAsync();
+        }
+        
+        public string[] update(System.Guid uid) {
+            return base.Channel.update(uid);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> updateAsync(System.Guid uid) {
+            return base.Channel.updateAsync(uid);
         }
     }
 }

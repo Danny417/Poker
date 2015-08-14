@@ -30,15 +30,20 @@ namespace Poker.Clients.UI.Console
 
             System.Console.WriteLine("Hello! Please enter your name.");
             var userName = System.Console.ReadLine();
-            var msg = String.Empty;
-            var users = gameClient.JoinGame(userName);
 
-            foreach (var user in users)
+            var uid = gameClient.JoinGame(userName);
+            System.Console.WriteLine("Welcome, {0}", userName);
+
+            // the loop continusly check with game states and updates the client
+            // in real game, this should be a timer that execute at fixed interval
+            while (true)
             {
-                System.Console.WriteLine("{0} has joined the game.", user);
+                var users = gameClient.update(uid);
+                foreach (var user in users)
+                {
+                    System.Console.WriteLine("{0} has joined the game.", user);
+                }
             }
-
-            System.Console.ReadLine();
 
         }
     }

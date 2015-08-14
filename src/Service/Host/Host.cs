@@ -50,6 +50,7 @@ namespace Poker.Service.Host
         /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
+            //Thread.Sleep(30000); //Debugging purpose
             try
             {
                 base.OnStart(args);

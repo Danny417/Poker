@@ -15,7 +15,7 @@ namespace Poker.Service.Contracts
         /// User join the game (or table)
         /// </summary>
         [OperationContract]
-        List<string> JoinGame(string userName);
+        Guid JoinGame(string userName);
 
         /// <summary>
         /// User leave the game
@@ -29,5 +29,12 @@ namespace Poker.Service.Contracts
         [OperationContract]
         void WatchGame();
 
+        /// <summary>
+        /// update client with list of users
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <returns>users' names</returns>
+        [OperationContract]
+        List<String> update(Guid uid);
     }
 }

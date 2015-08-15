@@ -58,9 +58,9 @@
       <Project>{5987bfbe-e933-44ec-aa85-0f345478da93}</Project>
       <Name>Poker.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Main\Poker.Main.csproj">
-      <Project>{ceed9b7d-0ff7-4a71-874b-4e952ca538e7}</Project>
-      <Name>Poker.Main</Name>
+    <ProjectReference Include="..\..\Service\Contracts\Poker.Service.Contracts.csproj">
+      <Project>{a2cc674c-1e4b-46c2-9702-8eedccd32bdf}</Project>
+      <Name>Poker.Service.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

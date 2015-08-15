@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Poker.Service.Contracts.Entities;
 
-namespace Poker.Main
+namespace Poker.Core
 {
     public class SampleAiPlayer : IPlayer
     {

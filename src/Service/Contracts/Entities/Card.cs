@@ -1,22 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poker.Core
+namespace Poker.Service.Contracts.Entities
 {
+    [DataContract]
     public class Card
     {
+        #region Data Members
+        [DataMember]
         public CardRank Rank { get; private set; }
+        [DataMember]
         public CardSuit Suit { get; private set; }
 
+        #endregion
+
+        /// <summary>
+        /// TODO: documentation
+        /// </summary>
+        /// <param name="rank"></param>
+        /// <param name="suit"></param>
         public Card(CardRank rank, CardSuit suit)
         {
             Rank = rank;
             Suit = suit;
         }
 
+        #region Override Methods
+        /// <summary>
+        /// TODO: documentation
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (obj is Card)
@@ -29,15 +47,24 @@ namespace Poker.Core
             }
         }
 
+        /// <summary>
+        /// TODO: documentation
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return (int)Rank + (int)Suit * 14;
         }
 
+        /// <summary>
+        /// TODO: documentation
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "{Rank} of {Suit}s";
         }
+        #endregion
     }
 
     public enum CardRank

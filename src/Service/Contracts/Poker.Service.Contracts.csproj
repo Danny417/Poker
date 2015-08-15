@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,20 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameService.cs" />
+    <Compile Include="Entities\Card.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Table.cs" />
     <Compile Include="IGameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\Poker.Core.csproj">
-      <Project>{5987bfbe-e933-44ec-aa85-0f345478da93}</Project>
-      <Name>Poker.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Main\Poker.Main.csproj">
-      <Project>{ceed9b7d-0ff7-4a71-874b-4e952ca538e7}</Project>
-      <Name>Poker.Main</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

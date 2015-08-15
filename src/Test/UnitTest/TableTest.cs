@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Poker.Main;
 using System.Collections.Generic;
 using Poker.Core;
 using System.Linq;
+using Poker.Service.Contracts.Entities;
 
 namespace Poker.Test.UnitTests
 {
@@ -14,7 +14,7 @@ namespace Poker.Test.UnitTests
         public void TestDealingNewDeck()
         {
             // Create a new table. This will internally create and shuffle cards
-            var table = new Table();
+            var table = new GameTable();
 
             // Retrieve private fields
             PrivateObject accessor = new PrivateObject(table);

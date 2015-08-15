@@ -1,16 +1,17 @@
-﻿using Poker.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Poker.Service.Contracts.Entities;
 
-namespace Poker.Main
+namespace Poker.Core
 {
-    public class Table : ITable
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GameTable : Table, ITable
     {
-        Stack<Card> _deck;
-        List<IPlayer> _players;
         List<Card> _communityCards;
         Stack<Card> _upsideDownCommunityCards;
 
@@ -23,7 +24,7 @@ namespace Poker.Main
 
         public IEnumerable<IPlayer> GetPlayers()
         {
-            return _players;
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Card> GetCommunityCards()
@@ -31,10 +32,18 @@ namespace Poker.Main
             return _communityCards;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="players"></param>
         public void StartNewGame(IEnumerable<IPlayer> players)
         {
-            _players.AddRange(players);
-            _deck = getShuffledDeck();
+            ///TODO: discuss why players are needed as the parameter
+            /// Does a game start before players join the table ?
+            /// How does a table start a game without knowing who are sitting in the table?
+            
+            //Players = players;
+            Deck = getShuffledDeck();
 
             dealCards();
         }
@@ -45,17 +54,17 @@ namespace Poker.Main
         {
             for (int i = 0; i < 3; i++)
             {
-                _communityCards.Add(_deck.Pop());
+                _communityCards.Add(Deck.Pop());
             }
             for (int i = 0; i < 2; i++)
             {
-                _upsideDownCommunityCards.Push(_deck.Pop());
+                _upsideDownCommunityCards.Push(Deck.Pop());
             }
             for (int i = 0; i < 2; i++)
             {
                 foreach (IPlayer player in _players)
                 {
-                    player.AcceptCard(_deck.Pop());
+                    player.AcceptCard(Deck.Pop());
                 }
             }
         }

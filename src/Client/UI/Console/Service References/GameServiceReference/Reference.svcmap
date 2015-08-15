@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="51e3b2d8-d70e-42a7-8ab5-58c39084eaff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/poker" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="poker.xsd" MetadataType="Schema" ID="c3cc4a29-db9d-438d-8b08-62bb402edeec" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd2" />
+    <MetadataFile FileName="poker1.xsd" MetadataType="Schema" ID="6cd9c765-e8fa-47b3-93a6-6b2b5c87a725" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd0" />
+    <MetadataFile FileName="poker2.xsd" MetadataType="Schema" ID="8bfc549f-027d-49dd-a6e9-114a679d22c4" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd3" />
+    <MetadataFile FileName="poker3.xsd" MetadataType="Schema" ID="bffff719-0356-442a-8d43-7991cefe2823" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd1" />
+    <MetadataFile FileName="GameService.wsdl" MetadataType="Wsdl" ID="74e844ad-0fea-4222-a183-624317a83de7" SourceId="1" SourceUrl="http://localhost:8080/poker?wsdl" />
+    <MetadataFile FileName="poker.disco" MetadataType="Disco" ID="1c47b381-decc-4684-9318-23ce730ac014" SourceId="1" SourceUrl="http://localhost:8080/poker?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

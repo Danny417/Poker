@@ -7,8 +7,7 @@ using System.ServiceProcess;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Threading;
-using Poker.Service.Contracts;
-using System.Threading.Tasks;
+using Poker.Core;
 
 namespace Poker.Service.Host
 {

@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Poker.Service.Contracts.Entities;
 
 namespace Poker.Service.Contracts
 {
@@ -15,7 +16,7 @@ namespace Poker.Service.Contracts
         /// User join the game (or table)
         /// </summary>
         [OperationContract]
-        Guid JoinGame(string userName);
+        Player JoinGame(string userName);
 
         /// <summary>
         /// User leave the game
@@ -32,9 +33,11 @@ namespace Poker.Service.Contracts
         /// <summary>
         /// update client with list of users
         /// </summary>
-        /// <param name="uid"></param>
-        /// <returns>users' names</returns>
+        /// <param name="user"></param>
         [OperationContract]
-        List<String> update(Guid uid);
+        List<string> Update(Guid uid);
+
+        [OperationContract]
+        void Chat(Guid uid, string message);
     }
 }

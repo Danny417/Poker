@@ -75,6 +75,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Poker.Core.csproj">
+      <Project>{5987bfbe-e933-44ec-aa85-0f345478da93}</Project>
+      <Name>Poker.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Contracts\Poker.Service.Contracts.csproj">
       <Project>{a2cc674c-1e4b-46c2-9702-8eedccd32bdf}</Project>
       <Name>Poker.Service.Contracts</Name>

@@ -39,7 +39,7 @@ namespace Poker.Service.Host
             }
             this.AutoLog = false;
 
-            _gameHost = new System.ServiceModel.ServiceHost(typeof(GameService));
+            _gameHost = new System.ServiceModel.ServiceHost(typeof(Game));
         }
 
         #region Override Methods

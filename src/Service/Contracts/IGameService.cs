@@ -13,31 +13,25 @@ namespace Poker.Service.Contracts
     public interface IGameService
     {
         /// <summary>
-        /// User join the game (or table)
+        /// 
         /// </summary>
-        [OperationContract]
-        Player JoinGame(string userName);
-
-        /// <summary>
-        /// User leave the game
-        /// </summary>
-        [OperationContract]
-        void QuitGame();
+        [OperationContract(IsOneWay = true)]
+        void HasJoinedGame(GameResponse res);
 
         /// <summary>
         /// 
         /// </summary>
-        [OperationContract]
-        void WatchGame();
+        [OperationContract(IsOneWay = true)]
+        void HasWatchedGame(GameResponse res);
+
+        [OperationContract(IsOneWay = true)]
+        void HasQuitGame(GameResponse res);
 
         /// <summary>
-        /// update client with list of users
+        /// 
         /// </summary>
-        /// <param name="user"></param>
-        [OperationContract]
-        List<string> Update(Guid uid);
-
-        [OperationContract]
-        void Chat(Guid uid, string message);
+        [OperationContract(IsOneWay = true)]
+        void CatchError(GameResponse res);
+        
     }
 }

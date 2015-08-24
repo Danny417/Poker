@@ -244,106 +244,156 @@ namespace Poker.Clients.UI.Console.GameServiceReference {
         Club = 0,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GameServiceReference.IGameService")]
-    public interface IGameService {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GameResponse", Namespace="http://schemas.datacontract.org/2004/07/Poker.Service.Contracts.Entities")]
+    [System.SerializableAttribute()]
+    public partial class GameResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/JoinGame", ReplyAction="http://tempuri.org/IGameService/JoinGameResponse")]
-        Poker.Clients.UI.Console.GameServiceReference.Player JoinGame(string userName);
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/JoinGame", ReplyAction="http://tempuri.org/IGameService/JoinGameResponse")]
-        System.Threading.Tasks.Task<Poker.Clients.UI.Console.GameServiceReference.Player> JoinGameAsync(string userName);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/QuitGame", ReplyAction="http://tempuri.org/IGameService/QuitGameResponse")]
-        void QuitGame();
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/QuitGame", ReplyAction="http://tempuri.org/IGameService/QuitGameResponse")]
-        System.Threading.Tasks.Task QuitGameAsync();
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/WatchGame", ReplyAction="http://tempuri.org/IGameService/WatchGameResponse")]
-        void WatchGame();
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/WatchGame", ReplyAction="http://tempuri.org/IGameService/WatchGameResponse")]
-        System.Threading.Tasks.Task WatchGameAsync();
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/Update", ReplyAction="http://tempuri.org/IGameService/UpdateResponse")]
-        string[] Update(System.Guid uid);
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/Update", ReplyAction="http://tempuri.org/IGameService/UpdateResponse")]
-        System.Threading.Tasks.Task<string[]> UpdateAsync(System.Guid uid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/Chat", ReplyAction="http://tempuri.org/IGameService/ChatResponse")]
-        void Chat(System.Guid uid, string message);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/Chat", ReplyAction="http://tempuri.org/IGameService/ChatResponse")]
-        System.Threading.Tasks.Task ChatAsync(System.Guid uid, string message);
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IGameServiceChannel : Poker.Clients.UI.Console.GameServiceReference.IGameService, System.ServiceModel.IClientChannel {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GameServiceReference.IGameManager", CallbackContract=typeof(Poker.Clients.UI.Console.GameServiceReference.IGameManagerCallback))]
+    public interface IGameManager {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/JoinGame")]
+        void JoinGame(Poker.Clients.UI.Console.GameServiceReference.Player user);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/JoinGame")]
+        System.Threading.Tasks.Task JoinGameAsync(Poker.Clients.UI.Console.GameServiceReference.Player user);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/QuitGame")]
+        void QuitGame(Poker.Clients.UI.Console.GameServiceReference.Player user);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/QuitGame")]
+        System.Threading.Tasks.Task QuitGameAsync(Poker.Clients.UI.Console.GameServiceReference.Player user);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/WatchGame")]
+        void WatchGame(Poker.Clients.UI.Console.GameServiceReference.Player user);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/WatchGame")]
+        System.Threading.Tasks.Task WatchGameAsync(Poker.Clients.UI.Console.GameServiceReference.Player user);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IGameManagerCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/HasJoinedGame")]
+        void HasJoinedGame(Poker.Clients.UI.Console.GameServiceReference.GameResponse res);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/HasWatchedGame")]
+        void HasWatchedGame(Poker.Clients.UI.Console.GameServiceReference.GameResponse res);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/HasQuitGame")]
+        void HasQuitGame(Poker.Clients.UI.Console.GameServiceReference.GameResponse res);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/CatchError")]
+        void CatchError(Poker.Clients.UI.Console.GameServiceReference.GameResponse res);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IGameManagerChannel : Poker.Clients.UI.Console.GameServiceReference.IGameManager, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GameServiceClient : System.ServiceModel.ClientBase<Poker.Clients.UI.Console.GameServiceReference.IGameService>, Poker.Clients.UI.Console.GameServiceReference.IGameService {
+    public partial class GameManagerClient : System.ServiceModel.DuplexClientBase<Poker.Clients.UI.Console.GameServiceReference.IGameManager>, Poker.Clients.UI.Console.GameServiceReference.IGameManager {
         
-        public GameServiceClient() {
+        public GameManagerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public GameServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public GameManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public GameServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public GameManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public GameServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public GameManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public GameServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public GameManagerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
-        public Poker.Clients.UI.Console.GameServiceReference.Player JoinGame(string userName) {
-            return base.Channel.JoinGame(userName);
+        public void JoinGame(Poker.Clients.UI.Console.GameServiceReference.Player user) {
+            base.Channel.JoinGame(user);
         }
         
-        public System.Threading.Tasks.Task<Poker.Clients.UI.Console.GameServiceReference.Player> JoinGameAsync(string userName) {
-            return base.Channel.JoinGameAsync(userName);
+        public System.Threading.Tasks.Task JoinGameAsync(Poker.Clients.UI.Console.GameServiceReference.Player user) {
+            return base.Channel.JoinGameAsync(user);
         }
         
-        public void QuitGame() {
-            base.Channel.QuitGame();
+        public void QuitGame(Poker.Clients.UI.Console.GameServiceReference.Player user) {
+            base.Channel.QuitGame(user);
         }
         
-        public System.Threading.Tasks.Task QuitGameAsync() {
-            return base.Channel.QuitGameAsync();
+        public System.Threading.Tasks.Task QuitGameAsync(Poker.Clients.UI.Console.GameServiceReference.Player user) {
+            return base.Channel.QuitGameAsync(user);
         }
         
-        public void WatchGame() {
-            base.Channel.WatchGame();
+        public void WatchGame(Poker.Clients.UI.Console.GameServiceReference.Player user) {
+            base.Channel.WatchGame(user);
         }
         
-        public System.Threading.Tasks.Task WatchGameAsync() {
-            return base.Channel.WatchGameAsync();
-        }
-        
-        public string[] Update(System.Guid uid) {
-            return base.Channel.Update(uid);
-        }
-        
-        public System.Threading.Tasks.Task<string[]> UpdateAsync(System.Guid uid) {
-            return base.Channel.UpdateAsync(uid);
-        }
-        
-        public void Chat(System.Guid uid, string message) {
-            base.Channel.Chat(uid, message);
-        }
-        
-        public System.Threading.Tasks.Task ChatAsync(System.Guid uid, string message) {
-            return base.Channel.ChatAsync(uid, message);
+        public System.Threading.Tasks.Task WatchGameAsync(Poker.Clients.UI.Console.GameServiceReference.Player user) {
+            return base.Channel.WatchGameAsync(user);
         }
     }
 }

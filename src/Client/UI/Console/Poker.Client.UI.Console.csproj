@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\GameServiceReference\Reference.cs">
@@ -56,20 +57,17 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GameServiceReference\GameService.wsdl" />
-    <None Include="Service References\GameServiceReference\Poker.Clients.UI.Console.GameServiceReference.Player.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\GameServiceReference\poker.xsd">
+    <None Include="Service References\GameServiceReference\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GameServiceReference\poker1.xsd">
+    <None Include="Service References\GameServiceReference\Poker.Service.Contracts.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GameServiceReference\poker2.xsd">
+    <None Include="Service References\GameServiceReference\service.wsdl" />
+    <None Include="Service References\GameServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GameServiceReference\poker3.xsd">
+    <None Include="Service References\GameServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -78,9 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\GameServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\GameServiceReference\poker.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\GameServiceReference\configuration91.svcinfo" />

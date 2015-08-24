@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="51e3b2d8-d70e-42a7-8ab5-58c39084eaff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc3f0e30-f7a6-4bd0-af0c-8eb439f04d4d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,15 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/poker" Protocol="http" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:8081/poker/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="poker.xsd" MetadataType="Schema" ID="c3cc4a29-db9d-438d-8b08-62bb402edeec" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd2" />
-    <MetadataFile FileName="poker1.xsd" MetadataType="Schema" ID="6cd9c765-e8fa-47b3-93a6-6b2b5c87a725" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd0" />
-    <MetadataFile FileName="poker2.xsd" MetadataType="Schema" ID="8bfc549f-027d-49dd-a6e9-114a679d22c4" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd3" />
-    <MetadataFile FileName="poker3.xsd" MetadataType="Schema" ID="bffff719-0356-442a-8d43-7991cefe2823" SourceId="1" SourceUrl="http://localhost:8080/poker?xsd=xsd1" />
-    <MetadataFile FileName="GameService.wsdl" MetadataType="Wsdl" ID="74e844ad-0fea-4222-a183-624317a83de7" SourceId="1" SourceUrl="http://localhost:8080/poker?wsdl" />
-    <MetadataFile FileName="poker.disco" MetadataType="Disco" ID="1c47b381-decc-4684-9318-23ce730ac014" SourceId="1" SourceUrl="http://localhost:8080/poker?disco" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a84524a9-8f46-47dd-b0b6-5df11c32a42f" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7759b1e5-3117-4cab-b871-bddd8bdbde30" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4c43d9ca-aeb2-47a6-9566-5690c42dfb05" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="Poker.Service.Contracts.Entities.xsd" MetadataType="Schema" ID="560593cc-5bbc-4ee4-9864-32a5bc99e8ab" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="326f99df-b793-4dc2-b281-f2ae030df3e0" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

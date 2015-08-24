@@ -11,7 +11,7 @@ namespace Poker.Clients.UI.Console
     {
         void IGameManagerCallback.CatchError(GameResponse res)
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine(res.Message);
         }
 
         void IGameManagerCallback.HasJoinedGame(GameResponse res)
@@ -21,12 +21,12 @@ namespace Poker.Clients.UI.Console
 
         void IGameManagerCallback.HasQuitGame(GameResponse res)
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine(res.Message);
         }
 
         void IGameManagerCallback.HasWatchedGame(GameResponse res)
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine(res.Message);
         }
     }
 }

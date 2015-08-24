@@ -43,10 +43,14 @@ namespace Poker.Core
         {
             try
             {
-                IGameService client = Proxy;
                 _clients.Add(user.UniqueIdentifier, Proxy);
-                client.HasJoinedGame(new GameResponse(true, user.UserName + " has successfully joined the game."));
-            } catch(Exception ex)
+                foreach(var callbackService in _clients.Values)
+                {
+                    callbackService.HasJoinedGame(new GameResponse(true, user.UserName + " has joined the game."));
+                }
+                
+            }
+            catch (Exception ex)
             {
                 Proxy.HasJoinedGame(new GameResponse(false, ex.Message));
             }
@@ -55,7 +59,20 @@ namespace Poker.Core
 
         public void QuitGame(Player user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _clients.Remove(user.UniqueIdentifier);
+                Proxy.HasQuitGame(new GameResponse(true, "You have quited the game."));
+                foreach (var callbackService in _clients.Values)
+                {
+                    callbackService.HasQuitGame(new GameResponse(true, user.UserName + " has quited the game."));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Proxy.HasJoinedGame(new GameResponse(false, ex.Message));
+            }
         }
 
         public void WatchGame(Player user)

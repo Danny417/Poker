@@ -48,10 +48,10 @@ namespace Poker.Clients.UI.Console
                         Proxy.JoinGame(user);
                         break;
                     case "2":
-                        Proxy.QuitGame(user);
+                        Proxy.WatchGame(user);
                         break;
                     case "3":
-                        Proxy.WatchGame(user);
+                        Proxy.QuitGame(user);
                         break;
                     case "quit":
                         break;

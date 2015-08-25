@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Media;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using Poker.Clients.UI.Console.GameServiceReference;
 
 namespace Poker.Clients.UI.Console
@@ -13,7 +7,7 @@ namespace Poker.Clients.UI.Console
     class Program
     {
         /// <summary>
-        /// 
+        /// Proxy provides an handler to call game manager
         /// </summary>
         public static IGameManager Proxy
         {
@@ -25,7 +19,7 @@ namespace Poker.Clients.UI.Console
         }
 
         /// <summary>
-        /// 
+        /// Main program that executes when it starts
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
@@ -39,6 +33,7 @@ namespace Poker.Clients.UI.Console
             System.Console.WriteLine("2. Watch the game");
             System.Console.WriteLine("3. Leave the game");
             System.Console.WriteLine("Please select {1, 2, 3 or quit to terminate} : ");
+
             // loop continusly check user input
             while (!(userInput = System.Console.ReadLine()).ToLower().Equals("quit"))
             {

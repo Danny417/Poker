@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Diagnostics;
 using Poker.Service.Contracts;
 using Poker.Service.Contracts.Entities;
@@ -14,19 +8,27 @@ using Poker.Service.Contracts.Entities;
 namespace Poker.Core
 {
     /// <summary>
-    /// 
+    /// Implementation of IGameManager which handles how client join, quit, and watch a game
     /// </summary>
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Game : IGameManager
     {
+        #region Private members
         private EventLog _eventLog;
         private Dictionary<Guid, IGameService> _clients;
+        #endregion
 
         #region Public Properties
 
         public IGameService Proxy => OperationContext.Current.GetCallbackChannel<IGameService>();
 
         #endregion
+
+        #region Constructor
+        
+        /// <summary>
+        /// Game constructor
+        /// </summary>
         public Game()
         {
             _clients = new Dictionary<Guid, IGameService>();
@@ -36,9 +38,14 @@ namespace Poker.Core
                 Log = "PokerServiceLog"
             };
         }
+        #endregion
 
         #region IGameServiceManager Members
        
+        /// <summary>
+        /// User joins the game with table number and user information
+        /// </summary>
+        /// <param name="user">user object contains table number and user information</param>
         public void JoinGame(Player user)
         {
             try
@@ -57,6 +64,10 @@ namespace Poker.Core
             
         }
 
+        /// <summary>
+        /// User quits the game with the table number and user information
+        /// </summary>
+        /// <param name="user">user object contains table number and user information</param>
         public void QuitGame(Player user)
         {
             try
@@ -75,6 +86,10 @@ namespace Poker.Core
             }
         }
 
+        /// <summary>
+        /// User joins to watch the game
+        /// </summary>
+        /// <param name="user">user object contains table number and user information</param>
         public void WatchGame(Player user)
         {
             throw new NotImplementedException();

@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.ServiceProcess;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using System.Threading;
 using Poker.Core;
 
 namespace Poker.Service.Host
 {
     /// <summary>
-    /// Poker Game service that running in the background
+    /// Hosting Poker Game service in the background
     /// </summary>
     public partial class Host : ServiceBase
     {
+        #region Private memebers 
         private System.ServiceModel.ServiceHost _gameHost;
+        #endregion
 
+        #region Constructor
         /// <summary>
         /// Constructor of Game Service
         /// </summary>
@@ -41,6 +40,7 @@ namespace Poker.Service.Host
 
             _gameHost = new System.ServiceModel.ServiceHost(typeof(Game));
         }
+        #endregion
 
         #region Override Methods
         /// <summary>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc3f0e30-f7a6-4bd0-af0c-8eb439f04d4d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8081/poker/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a84524a9-8f46-47dd-b0b6-5df11c32a42f" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7759b1e5-3117-4cab-b871-bddd8bdbde30" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4c43d9ca-aeb2-47a6-9566-5690c42dfb05" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="Poker.Service.Contracts.Entities.xsd" MetadataType="Schema" ID="560593cc-5bbc-4ee4-9864-32a5bc99e8ab" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="326f99df-b793-4dc2-b281-f2ae030df3e0" SourceId="1" SourceUrl="net.tcp://localhost:8081/poker/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

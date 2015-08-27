@@ -20,7 +20,10 @@ namespace Poker.Core
 
         #region Public Properties
 
-        public IGameService Proxy => OperationContext.Current.GetCallbackChannel<IGameService>();
+        public IGameService Proxy
+        {
+            get { return OperationContext.Current.GetCallbackChannel<IGameService>(); }
+        }
 
         #endregion
 
